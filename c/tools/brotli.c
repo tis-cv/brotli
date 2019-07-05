@@ -651,7 +651,7 @@ static void CopyStat(const char* input_path, const char* output_path) {
   if (stat(input_path, &statbuf) != 0) {
     return;
   }
-  times.actime = statbuf.st_atime;
+  //times.actime = statbuf.st_atime;
   times.modtime = statbuf.st_mtime;
   utime(output_path, &times);
   res = chmod(output_path, statbuf.st_mode & (S_IRWXU | S_IRWXG | S_IRWXO));
