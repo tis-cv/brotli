@@ -1005,7 +1005,7 @@ static BROTLI_BOOL CompressFiles(Context* context) {
     }
     is_ok = OpenFiles(context);
     if (is_ok && !context->current_output_path &&
-        !context->force_overwrite /*&& isatty(STDOUT_FILENO)*/) {
+        !context->force_overwrite && false/*&& isatty(STDOUT_FILENO)*/) {
       fprintf(stderr, "Use -h help. Use -f to force output to a terminal.\n");
       is_ok = BROTLI_FALSE;
     }
